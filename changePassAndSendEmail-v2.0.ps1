@@ -71,26 +71,18 @@ Write-Host $password
 #############################################################################
 #######################Get users' info / Change pass#########################
 
-#$CUPN = 'lab1@cin.ufpe.br'
 $USER = $args[0]
 # UserPrincipalName Refere-se ao e-mail 
 $CMNM = (Get-AzureADUser -Filter "MailNickName eq '$USER'")
 $CUPN = $CMNM.UserPrincipalName
-$CPW = $password
 $CDN = $CMNM.DisplayName
-#$CMail = 'concurseiro.lipe@gmail.com'
 $CMail = $CMNM.Mail
+$CObjID = $CMNM.objectID
+$CPW = $password
 $CPWS = ConvertTo-SecureString -String $CPW -AsPlainText -Force
 
 Write-Host "Reseting the password of: $CUPN" -ForegroundColor Magenta -BackgroundColor Black
-#$CObjID = (Get-AzureADUser -Filter "UserPrincipalName eq '$CUPN'").objectID
-$CObjID = $CMNM.objectID
 Set-AzureADUserPassword -ObjectId $CObjID -Password $CPWS -ForceChangePasswordNextLogin $true
-
-#Error logging
-If ($Error -ne $null) {
-    $Error | Out-File $FilePath\ErrorLog.txt
-        }
 
 #############################################################################
 ############################Send pass by E-mail##############################
