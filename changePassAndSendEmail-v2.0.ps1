@@ -74,10 +74,10 @@ Write-Host $password
 $USER = $args[0]
 # UserPrincipalName Refere-se ao e-mail 
 $CMNN = (Get-AzureADUser -Filter "MailNickName eq '$USER'")
-$CUPN = $CMNM.UserPrincipalName
-$CDN = $CMNM.DisplayName
-$CMail = $CMNM.Mail
-$CObjID = $CMNM.objectID
+$CUPN = $CMNN.UserPrincipalName
+$CDN = $CMNN.DisplayName
+$CMail = $CMNN.Mail
+$CObjID = $CMNN.objectID
 $CPW = $password
 $CPWS = ConvertTo-SecureString -String $CPW -AsPlainText -Force
 
