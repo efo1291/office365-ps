@@ -1,15 +1,5 @@
 #############################################################################
-#       Author: Sidath U Liyanage
-#       Date: 14/01/2019
-#       Satus: Bulk change user password
-#       Update: Initial functionality.
-#       Description: Bulk change password for a given list of users.
-#       Note!: Update the "PasswordChangeList.csv" before running the script.
-#############################################################################
 ###########################Define Variables##################################
-
-#$FilePath = "C:\Users\sidath\OneDrive\Documents\Scripts--" #<< Path for the CSV file
-#$adminAcc = 'admin@Contoso.com' #<< Admin account credentials
 $adminAcc = 'admino365@contoso.com' #<< Admin account credentials
 
 #$FromAddress = 'Sidath@Contoso.com' #<< Mail from address
