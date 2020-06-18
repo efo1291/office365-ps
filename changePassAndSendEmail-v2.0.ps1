@@ -5,12 +5,12 @@
 # Verificar se args possui mais de três caracteres
 #$USER = $args[0]
 
-$adminAcc = 'efo2@cin.ufpe.br' #<< Admin account credentials
+$adminAcc = 'admino365@contoso.com' #<< Admin account credentials
 
 #$FromAddress = 'Sidath@Contoso.com' #<< Mail from address
-$FromAddress = 'efo2@cin.ufpe.br' #<< Mail from address
-$MailSubject = "Acesso Office 365 - CIn"
-$MailSignature = "CIn - Suporte"
+$FromAddress = 'admino365@contoso.com' #<< Mail from address
+$MailSubject = "Acesso Office 365 - Contoso"
+$MailSignature = "Contoso - Suporte"
 #$SmtpPServer = 'smtp.office365.com'
 $SmtpPServer = 'smtp.gmail.com'
 $SmtpPort = '587'
@@ -91,7 +91,7 @@ Set-AzureADUserPassword -ObjectId $CObjID -Password $CPWS -ForceChangePasswordNe
 $MsgBody = "Oi $CDN,<br><br>"
 $MsgBody += "Voce solicitou redefinição da senha Office 365.<br>"
 $MsgBody += "Utilize esta senha temporária e redefina na tela de login.<br>"
-$MsgBody += "https://cin.ufpe.br/azure<br><br>"
+$MsgBody += "https://contoso.com<br><br>"
 $MsgBody += "<table border=0> <tr> <th> User </th> <th> Password </th> <tr>"
 $MsgBody += "<tr> <td> $CUPN </td> <td> $CPW </td> </tr> </table>"
 
