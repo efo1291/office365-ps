@@ -1,3 +1,7 @@
+###########################Define Variables##################################
+
+$credFile = "${env:\userprofile}\o365.cred"
+
 ##########################Check if Administrator#############################
 
 if (-NOT ([Security.Principal.WindowsPrincipal] `
@@ -30,7 +34,6 @@ If ((Get-Module AzureAD) -eq $null) {
 $Error.Clear()
 Set-ExecutionPolicy Bypass
 
-$credFile = "${env:\userprofile}\o365.cred"
 if (-NOT (Test-Path $credFile -PathType Leaf)) {
     Write-Warning "Credentials not found. Enter Office 365 credentials"
     $cred = Get-Credential
