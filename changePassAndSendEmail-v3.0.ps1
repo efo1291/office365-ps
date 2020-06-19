@@ -34,7 +34,7 @@ if ($USERS -ne $null) {
             
             # Call script
             . .\generatePass.ps1
-            
+                        
             $MsgBody = "Oi $UDN,<br><br>"
             $MsgBody += "Voce solicitou redefinição da senha Office 365.<br>"
             $MsgBody += "Utilize esta senha temporária e redefina na tela de login.<br>"
@@ -42,7 +42,7 @@ if ($USERS -ne $null) {
             $MsgBody += "<table border=0> <tr> <th> User </th> <th> Password </th> <tr>"
             $MsgBody += "<tr> <td> $UUPN </td> <td> $UPW </td> </tr> </table>"
                         
-            Write-Host "Reseting the password of: $UUPN" -ForegroundColor Magenta -BackgroundColor Black
+            Write-Host "Reseting the password of: $UUPN | $UPW" -ForegroundColor Magenta -BackgroundColor Black
             Set-AzureADUserPassword -ObjectId $UObjID -Password $UPWS -ForceChangePasswordNextLogin $true
 
             Write-Host "Sending the password to: $UMail"
