@@ -18,6 +18,13 @@ ForEach ($user in $ORIGINALUSERS) {
     if ($user.Length -le 2) { Write-Warning "Invalid user $user"
     $USERS.Remove($user) | Out-Null }}
 
+###########################Verify Module AzureAD#############################
+
+If ((Get-Module AzureAD) -eq $null) {
+    Write-Warning "Installing module AzureAD..."
+    Install-Module AzureAD
+    }
+    
 ##################Verify cred file And Connect Office 365####################
 
 $Error.Clear()
