@@ -1,8 +1,8 @@
 ###########################Define Variables##################################
 
-$adminO365 = 'efo2@cin.ufpe.br'
+$adminO365 = 'admin@contoso.com'
 
-$FromAddress = 'efo2@cin.ufpe.br'
+$FromAddress = 'admin@contoso.com'
 $MailSubject = "Acesso Office 365 - Contoso"
 $MailSignature = "Contoso - Suporte"
 $SmtpPServer = 'smtp.gmail.com'
