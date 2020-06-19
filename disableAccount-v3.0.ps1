@@ -2,7 +2,7 @@
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
         Write-Warning "You are not running this as local administrator. Run it again in an elevated prompt." ; break }
 
-[System.Collections.ArrayList]$ORIGINALUSERS = $args[0]
+$ORIGINALUSERS = $args[0]
 [System.Collections.ArrayList]$USERS = @()
 
 ForEach ($user in $ORIGINALUSERS) {    
@@ -37,7 +37,6 @@ If ($Error -ne $null) {
 clear
 Write-Warning "DISABLING ACCOUNTS"
 ForEach ($user in $USERS) {
-
     $CMNN = (Get-AzureADUser -Filter "MailNickName eq '$user'")
     $CUPN = $CMNN.UserPrincipalName
     $CDN = $CMNN.DisplayName
