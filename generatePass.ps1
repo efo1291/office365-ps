@@ -14,13 +14,11 @@ function Scramble-String([string]$inputString){
 }
  
 # Variável para receber os caracteres gerados na função Get-RandomCharacters
-$password = Get-RandomCharacters -length 3 -characters 'abcdefghikmnprstuvwxyz'
-$password += Get-RandomCharacters -length 2 -characters 'ABCDEFGHKLMNPRSTUVWXYZ'
-$password += Get-RandomCharacters -length 2 -characters '23456789'
-$password += Get-RandomCharacters -length 1 -characters '!@#$&'
+$UPW = Get-RandomCharacters -length 3 -characters 'abcdefghikmnprstuvwxyz'
+$UPW += Get-RandomCharacters -length 2 -characters 'ABCDEFGHKLMNPRSTUVWXYZ'
+$UPW += Get-RandomCharacters -length 2 -characters '23456789'
+$UPW += Get-RandomCharacters -length 1 -characters '!@#$&'
  
 # Variável para embaralhar na função Scramble-String
-$password = Scramble-String $password
- 
-# Exibir password
-Write-Host $password
+$UPW = Scramble-String $UPW
+$UPWS = ConvertTo-SecureString -String $UPW -AsPlainText -Force
